@@ -47,9 +47,13 @@ public class PooUnidad01Oms_ejemplo {
         
         System.out.println("mi otro perro se llama: "+perro2.nombre+" tiene "
                 +perro2.edad+ " años"+ " y es un " + perro2.raza);
+   
+        perro3.nombre="joven";
+        perro3.raza="dalmata";
+        perro3.edad=6;
         
-        
-        
+        System.out.println("mi otro perro se llama: "+perro3.nombre+" tiene "
+                +perro3.edad+ " años"+ " y es un " + perro3.raza);
         
         
         
