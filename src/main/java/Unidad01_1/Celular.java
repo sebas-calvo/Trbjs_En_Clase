@@ -8,9 +8,9 @@ package Unidad01_1;
  *
  * @author sebas
  */
-public class Auto {
+public class Celular {
     String marca;
-    int ano;
-    String placa;
-    String color;
+    String capacidad;
+    int numeroDuenos;
+    int apps; 
 }

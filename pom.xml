@@ -11,5 +11,5 @@
         <maven.compiler.target>11</maven.compiler.target>
         <exec.mainClass>com.mycompany.poo.unidad01.oms_ejemplo.PooUnidad01Oms_ejemplo</exec.mainClass>
     </properties>
-    <name>poo-unidad01-sebasc_cls_objs</name>
+    <name>poo-CLASES</name>
 </project>
