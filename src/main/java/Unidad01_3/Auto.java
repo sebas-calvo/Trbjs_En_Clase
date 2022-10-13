@@ -76,25 +76,94 @@ public class Auto {
 
         return retorno;
     }
+    
     public int getNumeroContinente(){
         var retorno=0;
-        return retorno;
-        
-        
-        
-        
-        
-        
-        
+        var marcaPais=this.getPaisMarca();
+        switch(marcaPais){
+            case "EE.UU":
+                retorno=2;
+                break;
+            case "Japón":
+                retorno=3;
+                break;
+            default:
+                retorno=0;
+        }
+        return retorno;   
     }
     
+    public double calcularIVA(){
+        var retorno=0.0d;
+        retorno=this.precio*0.12;
+      
+        
+        return retorno;
+    }
     
+    public int calcularEdad(int yearActual){
+        var retorno=0;    
+        retorno=yearActual-this.year;
+        
+        return retorno;
+    }
     
+    //10% por cada año de uso
+    //La depreciacion no puede exceder el precio
+    public double calcularDepreciacion(int yearActual){
+        var retorno=0.0d;
+        var edad=this.calcularEdad(yearActual);
+        retorno=edad*0.10*this.precio;
+ 
+        return retorno;
+    }
     
+    /*
+    Edad 0-5: 10% del precio
+    Edad 5-10: 8% del precio
+    Edad 10-15: 7% del precio
+    Edad >15: 6% del precio
+    */
     
+    public double calcularCostoMatricula(int yearActual){
+        var retorno=0.0d;
+        var edad=this.calcularEdad(yearActual);
+        if(edad>=0 & edad<5)
     
+            
+    return retorno;
+    }
     
-    
-    
-    
+      /*
+    Edad 0-5 y precio de 10000 SI
+    Edad 10-15 y precio de 10000 a 20000 SI
+    Edad >15 y precio de 20000 a 30000 SI
+    Edad >15 NO
+     */
+    public boolean sePuedeAsegurar(int yearActual){
+        var retorno=false;
+        var edad=this.calcularEdad(yearActual);
+        if(edad<=5 & this.precio<10000)
+        {
+            retorno=true;
+        }else{
+        if(edad<=5 & this.precio>=10000 & this.precio<20000)
+        {
+            retorno=true;
+        }else{
+        if(edad>=10 & edad<=15 & this.precio>=20000 & this.precio<30000)
+        {
+            retorno=true;
+        }else{
+        if(edad>15)
+        {
+            retorno=false;
+        }else{
+        }
+        }    
+        }
+        return retorno;
+        }
+        return false;  
+}
 }
