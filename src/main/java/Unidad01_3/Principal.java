@@ -15,8 +15,12 @@ public class Principal {
         auto1.placa="ABF8592";
         auto1.marca="Chevrolet";
         auto1.nombrePropietario="Juana Moreno";
+        auto1.color="Azul";
+        auto1.precio=30.000;
+        auto1.year=2020;
 
-        System.out.println(auto1.mostrarInfo()+" y el pais de origen es "+auto1.getPaisMarca());
+        System.out.println(auto1.mostrarInfo()+" y el pais de origen es "
+                +auto1.getPaisMarca());
     
     
         var auto2 = new Auto();
@@ -24,7 +28,8 @@ public class Principal {
         auto2.marca="Toyota";
         auto2.nombrePropietario="Juanito";
 
-        System.out.println(auto2.mostrarInfo()+" y el pais de origen es "+auto2.getPaisMarca());
+        System.out.println(auto2.mostrarInfo()+" y el pais de origen es "
+                +auto2.getPaisMarca());
 
 
         var auto3 = new Auto();
@@ -32,7 +37,8 @@ public class Principal {
         auto3.marca="Mercedez Benz";
         auto3.nombrePropietario="Martin Eljuri";
 
-        System.out.println(auto3.mostrarInfo()+" y el pais de origen es "+auto3.getPaisMarca());
+        System.out.println(auto3.mostrarInfo()+" y el pais de origen es "
+                +auto3.getPaisMarca());
         
         
         var auto4 = new Auto();
@@ -40,7 +46,8 @@ public class Principal {
         auto4.marca="Pagani";
         auto4.nombrePropietario="Antonio Abad";
 
-        System.out.println(auto4.mostrarInfo()+" y el pais de origen es "+auto4.getPaisMarca());
+        System.out.println(auto4.mostrarInfo()+" y el pais de origen es "
+                +auto4.getPaisMarca());
     
         
         
