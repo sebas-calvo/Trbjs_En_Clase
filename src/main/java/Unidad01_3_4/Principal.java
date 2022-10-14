@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Unidad01_3;
+package Unidad01_3_4;
 
 /**
  *
@@ -18,9 +18,10 @@ public class Principal {
         auto1.color="Azul";
         auto1.precio=30.000;
         auto1.year=2020;
+        auto1.cilindraje=3000;
 
         System.out.println(auto1.mostrarInfo()+" y el pais de origen es "
-                +auto1.getPaisMarca());
+                +auto1.getPaisMarca()+"la placa es valida: "+auto1.esPlacaValida());
     
     
         var auto2 = new Auto();
