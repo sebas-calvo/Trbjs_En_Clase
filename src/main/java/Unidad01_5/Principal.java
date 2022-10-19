@@ -65,7 +65,7 @@ public class Principal {
         numeroDecimalList[3] = 9.4;
         numeroDecimalList[4] = 8.4;
 
-        /*var i = 0;
+        var i = 0;
         System.out.println(numeroList[i]);
         i++;
         System.out.println(numeroDecimalList[i]);
@@ -83,7 +83,7 @@ public class Principal {
         System.out.println(numeroDecimalList[3]);
         System.out.println(numeroDecimalList[4]);
 
-        */
+        
         for (int j = 0; j < numeroList.length; j++) {
             System.out.println(numeroList[j]);   
         }
@@ -99,15 +99,15 @@ public class Principal {
         var arreglo = new int[dimension];
         
         var dato=0;
-        for (int i = 0; i<arreglo.length; i++) {
-            System.out.println("Ingrese el dato en la posicion "+(i+1));
+        for (int j = 0; j<arreglo.length; j++) {
+            System.out.println("Ingrese el dato en la posicion "+(j+1));
             dato=lectura.nextInt();
-            arreglo[i]=dato;
+            arreglo[j]=dato;
         }
         
         System.out.println("Los numeros ingresados son: ");
-        for (int i = 0; i<arreglo.length; i++) {
-            System.out.println(arreglo[i]);
+        for (int j = 0; j<arreglo.length; j++) {
+            System.out.println(arreglo[j]);
             
         }
         
