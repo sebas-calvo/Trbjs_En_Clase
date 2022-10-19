@@ -9,7 +9,8 @@ package Unidad01_3_4;
  * @author sebas
  */
 public class Principal {
-    public static void main(String [] args){
+    public static void main(String[] args) {
+        
         
         var auto1 = new Auto();
         auto1.placa="ABF8592";
@@ -20,8 +21,8 @@ public class Principal {
         auto1.year=2020;
         auto1.cilindraje=3000;
 
-        System.out.println(auto1.mostrarInfo()+" y el pais de origen es "
-                +auto1.getPaisMarca()+"la placa es valida: "+auto1.esPlacaValida());
+        System.out.println(auto1.mostrarInfo()+", el pais de origen es "
+                +auto1.getPaisMarca()+" la placa es valida: "+auto1.esPlacaValida());
     
     
         var auto2 = new Auto();
@@ -51,7 +52,7 @@ public class Principal {
                 +auto4.getPaisMarca());
     
         
-        
+    
         
         
         
