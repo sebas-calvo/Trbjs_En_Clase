@@ -88,8 +88,8 @@ public class Principal {
             System.out.println(numeroList[j]);   
         }
         
-        for (int k = 0; k < numeroDecimalList.length; k++) {
-            System.out.println(numeroDecimalList[k]);   
+        for (int j = 0; j < numeroDecimalList.length; j++) {
+            System.out.println(numeroDecimalList[j]);   
         }
         
         var dimension=0;
