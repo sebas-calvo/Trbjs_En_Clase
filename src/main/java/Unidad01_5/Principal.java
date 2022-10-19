@@ -92,11 +92,24 @@ public class Principal {
             System.out.println(numeroDecimalList[k]);   
         }
         
+        var dimension=0;
+        System.out.println("Ingrese la dimension del vector: ");
+            dimension = lectura.nextInt();
         
+        var arreglo = new int[dimension];
         
+        var dato=0;
+        for (int i = 0; i<arreglo.length; i++) {
+            System.out.println("Ingrese el dato en la posicion "+(i+1));
+            dato=lectura.nextInt();
+            arreglo[i]=dato;
+        }
         
-        
-        
+        System.out.println("Los numeros ingresados son: ");
+        for (int i = 0; i<arreglo.length; i++) {
+            System.out.println(arreglo[i]);
+            
+        }
         
         
         
