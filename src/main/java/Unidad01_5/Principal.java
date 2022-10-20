@@ -88,7 +88,7 @@ public class Principal {
             System.out.println(numeroList[j]);   
         }
         
-        for (int j = 0; j < numeroDecimalList.length; j++) {
+        for (var j = 0; j < numeroDecimalList.length; j++) {
             System.out.println(numeroDecimalList[j]);   
         }
         
@@ -110,6 +110,60 @@ public class Principal {
             System.out.println(arreglo[j]);
             
         }
+        
+        
+        var matriz = new int [2][3];
+        
+        System.out.println("Ingrese el valor correspondiente a la posición 0,0");
+        matriz [0][0] = lectura.nextInt();
+        System.out.println("Ingrese el valor correspondiente a la posición 0,1");
+        matriz [0][1] = lectura.nextInt();
+        System.out.println("Ingrese el valor correspondiente a la posición 0,2");
+        matriz [0][2] = lectura.nextInt();
+        System.out.println("Ingrese el valor correspondiente a la posición 1,0");
+        matriz [1][0] = lectura.nextInt();
+        System.out.println("Ingrese el valor correspondiente a la posición 1,1");
+        matriz [1][1] = lectura.nextInt();
+        System.out.println("Ingrese el valor correspondiente a la posición 1,2");
+        matriz [1][2] = lectura.nextInt();
+        
+        System.out.println(matriz [0][0]+" "+matriz [0][1]+" "+matriz [0][2]);
+        System.out.println(matriz [1][0]+" "+matriz [1][1]+" "+matriz [1][2]);
+        
+        
+        System.out.println("Ingrese el numero de filas que tendrá la matriz");
+        var filas=lectura.nextInt();
+        System.out.println("Ingrese el numero de columnas que tendrá la matriz");
+        var columnas=lectura.nextInt();
+        
+        var mat=new int[filas][columnas];
+        
+        var datos=0;
+        for (int j = 0; j < filas; j++) {
+            for (int k = 0; k < columnas; k++) {
+                System.out.println("Ingrese el dato en la fila "+(j+1)+" y columna"+ (k+1));
+                datos=lectura.nextInt();
+                
+            }
+            
+        }
+        
+        System.out.println("La matriz ingresada es: ");
+        for (int j = 0; j < filas; j++) {
+            System.out.println(mat[0][j]);
+        }
+        
+        for (int j = 0; j < columnas; j++) {
+            System.out.println(mat[j][0]);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
