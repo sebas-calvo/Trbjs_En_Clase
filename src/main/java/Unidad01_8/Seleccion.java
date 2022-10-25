@@ -20,13 +20,13 @@ public class Seleccion {
 
         switch (codigoFIFA) {
             case "ECU":
-                return "Ecuador";
+                retorno="Ecuador";
                 break;
-            case "ARG":
-                return "Argentina";
+            case "AFA":
+                retorno="Argentina";
                 break;
             case "BRA":
-                return "Brasil";
+                retorno="Brasil";
                 break;
             default:
                 throw new AssertionError();

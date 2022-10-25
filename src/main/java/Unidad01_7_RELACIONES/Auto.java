@@ -20,12 +20,12 @@ public class Auto {
     
     
     public String mostrarInfo() {
-        return " El auto tiene placa: " + this.placa + " es de marca: "
-                + this.marca + ". El propietario es: " + this.owner.nombre
-                + " la dirección del propietario es: " + this.owner.direccion
-                + " . El auto cuesta "+this.precio+ " USD, Fue matriculado en "
-                +this.lugar.descripcion+", Fue matriculado en la provincia:  "
-                +this.lugar.provincia+" y es modelo: " + this.year;
+        return " El auto tiene placa " + this.placa + " es de marca: "
+                + this.marca + ", el propietario es " + this.owner.nombre
+                + " la dirección del propietario es " + this.owner.direccion
+                + ", el auto cuesta "+this.precio+ " USD, fue matriculado en "
+                +this.lugar.descripcion+", en la provincia de  "
+                +this.lugar.provincia+" y es modelo " + this.year;
 
         
     }
