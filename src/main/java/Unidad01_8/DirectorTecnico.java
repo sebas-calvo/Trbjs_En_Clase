@@ -23,20 +23,14 @@ public class DirectorTecnico {
         var partidosEmpatados = 0;
         var lectura = new Scanner(System.in);
 
-        if (partidosGanados >= 0) {
-            System.out.println("Ingrese la cantidad de partidos ganados del DT de la "+this.pais.nombre);
-            partidosGanados = lectura.nextInt();
-        }
+        System.out.println("Ingrese la cantidad de partidos ganados del DT de la " + this.pais.nombre);
+        partidosGanados = lectura.nextInt();
 
-        if (partidosPerdidos >= 0) {
-            System.out.println("Ingrese la cantidad de partidos perdidos del DT de la "+this.pais.nombre);
-            partidosPerdidos = lectura.nextInt();
-        }
+        System.out.println("Ingrese la cantidad de partidos perdidos del DT de la " + this.pais.nombre);
+        partidosPerdidos = lectura.nextInt();
 
-        if (partidosEmpatados >= 0) {
-            System.out.println("Ingrese la cantidad de partidos empatados del DT de la "+this.pais.nombre);
-            partidosEmpatados = lectura.nextInt();
-        }
+        System.out.println("Ingrese la cantidad de partidos empatados del DT de la " + this.pais.nombre);
+        partidosEmpatados = lectura.nextInt();
 
         retorno = partidosGanados + "-" + partidosPerdidos + "-" + partidosEmpatados;
         return retorno;
@@ -44,8 +38,8 @@ public class DirectorTecnico {
 
     public String mostrarInfo() {
         return this.nombre + " es el Director Tecnico de la seleccion de "
-        + this.pais.obtienePais() +", a ganado "+this.titulos
-        +" titulos, y tiene un record de "+ this.obtenerRecord()+" (G-P-E)";
+                + this.pais.obtienePais() + ", a ganado " + this.titulos
+                + " titulos, y tiene un record de " + this.obtenerRecord() + " (G-P-E)";
     }
 
 }
