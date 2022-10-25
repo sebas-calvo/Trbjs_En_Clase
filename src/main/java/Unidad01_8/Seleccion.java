@@ -12,7 +12,7 @@ public class Seleccion {
 
     String codigoFIFA;
     String nombre;
-    String federacion;
+    String confederacion;
     int participacionesMundial;
 
     public String obtienePais() {

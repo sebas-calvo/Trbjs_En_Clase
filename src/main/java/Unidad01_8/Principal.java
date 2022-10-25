@@ -14,13 +14,13 @@ public class Principal {
         
         var ecuador=new Seleccion();
         ecuador.codigoFIFA="ECU";
-        ecuador.federacion="CONMEBOL";
+        ecuador.confederacion="CONMEBOL";
         ecuador.nombre="Federacion Ecuatoriana de Futbol";
         ecuador.participacionesMundial=4;
         
         var argentina=new Seleccion();
         argentina.codigoFIFA="AFA";
-        argentina.federacion="CONMEBOL";
+        argentina.confederacion="CONMEBOL";
         argentina.nombre="Asociación del Fútbol Argentino";
         argentina.participacionesMundial=17;
         
