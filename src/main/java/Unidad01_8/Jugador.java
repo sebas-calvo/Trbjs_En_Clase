@@ -16,7 +16,8 @@ public class Jugador {
     
     public String mostrarInfo(){
         return this.nombre+" juega en la "+this.equipo.nombre
-        +", perteneciente a la "+this.equipo.confederacion+", nació en el año "
+        +", perteneciente a la "+this.equipo.confederacion
+        +", su director tecnico se llama "+this.equipo.director.nombre+", nació en el año "
         +this.fechaNacimiento+" y juega en la posición de "+ this.posicion;
     }
     

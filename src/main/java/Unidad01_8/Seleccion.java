@@ -14,6 +14,7 @@ public class Seleccion {
     String nombre;
     String confederacion;
     int participacionesMundial;
+    DirectorTecnico director;
 
     public String obtienePais() {
         var retorno = "desconocido";

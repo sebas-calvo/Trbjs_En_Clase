@@ -23,7 +23,7 @@ public class DirectorTecnico {
         var partidosEmpatados = 0;
         var lectura = new Scanner(System.in);
 
-        System.out.println("Ingrese la cantidad de partidos ganados del DT de la " + this.pais.nombre);
+        System.out.println("Ingrese la cantidad de partidos ganados del DT de la " + this.pais.nombre+"");
         partidosGanados = lectura.nextInt();
 
         System.out.println("Ingrese la cantidad de partidos perdidos del DT de la " + this.pais.nombre);
