@@ -21,22 +21,28 @@ public class Principal {
         alfaro.nombre = "Gustavo Alfaro";
         alfaro.pais = ecuador;
         alfaro.titulos = 8;
+        alfaro.fechaNacimiento=1962;
+        alfaro.nacionalidad="Argentina";
+        alfaro.yearsTrayectoria=30;
 
         scaloni.nombre = "Lionel Scaloni";
         scaloni.pais = argentina;
         scaloni.titulos = 3;
+        scaloni.fechaNacimiento=1978;
+        scaloni.nacionalidad="Argentina";
+        scaloni.yearsTrayectoria=5;
 
         ecuador.codigoFIFA = "ECU";
         ecuador.confederacion = "CONMEBOL";
         ecuador.nombre = "Federacion Ecuatoriana de Futbol";
         ecuador.participacionesMundial = 4;
-        ecuador.director = alfaro;
+        ecuador.seleccionador = alfaro;
 
         argentina.codigoFIFA = "AFA";
         argentina.confederacion = "CONMEBOL";
         argentina.nombre = "Asociación del Fútbol Argentino";
         argentina.participacionesMundial = 17;
-        argentina.director=scaloni;
+        argentina.seleccionador=scaloni;
 
         var enner = new Jugador();
         enner.nombre = "Enner Valencia";
