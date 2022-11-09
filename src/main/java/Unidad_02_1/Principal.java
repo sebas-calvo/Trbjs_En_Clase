@@ -21,15 +21,23 @@ public class Principal {
         
         System.out.println(mauricio.toString());
         var pilichi = new Mascota("Pilichi","Gato","Mestizo","15 Kg",mauricio);
-        //var atencion = new Atencion(LocalDate.now(),"Dr. Masache",45,pilichi);
         var atencion = new Atencion(LocalDate.of(2022, Month.OCTOBER, 20)
-                ,"Dr. Masache",45,pilichi);
+                ,"Dr. Masache",45,pilichi,2);
+        atencion.nuevaReceta("paracetamol", 24, "1 cada 8 horas", 0);
+        atencion.nuevaReceta("suero", 1, "1 hasta finalizar", 1);
+        
+        
+        
+        
         System.out.println(mauricio.toString());
         System.out.println(pilichi.toString());
         System.out.println(atencion.toString());
         System.out.println("El día de la atencion fué: "
                 +atencion.getFecha().getDayOfWeek().name());
         var receta1 =new Receta("Apronax",2,"Luego de cada comida");
-         System.out.println(receta1.toString());
+        System.out.println(receta1.toString());
+        System.out.println(atencion.toString());
+         
+         
     }
 }
