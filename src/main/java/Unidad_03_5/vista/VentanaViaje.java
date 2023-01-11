@@ -7,6 +7,7 @@ package Unidad_03_5.vista;
 import Unidad_03_5.controlador.ViajeControl;
 import Unidad_03_5.controlador.CiudadControl;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,23 +18,20 @@ public class VentanaViaje extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanaViaje
      */
-    
-    private ViajeControl viajeControl=new ViajeControl();
+    private ViajeControl viajeControl = new ViajeControl();
     private CiudadControl ciudadControl = new CiudadControl();
-    
+
     public VentanaViaje() {
         initComponents();
+        actualizarCombos();
         this.setClosable(true);
         this.setIconifiable(true);
         this.setResizable(true);
         this.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
-        
-        
-        actualizarCombos();
+
     }
-    
-    private void actualizarCombos(){
-        
+
+     private void actualizarCombos(){
         var data = new String [this.ciudadControl.listar().size()];
         for(var i=0;i<this.ciudadControl.listar().size();i++){
             data[i]=this.ciudadControl.listar().get(i).getNombre();
@@ -41,6 +39,7 @@ public class VentanaViaje extends javax.swing.JInternalFrame {
         this.jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(data));
         this.jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(data));
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,7 +65,7 @@ public class VentanaViaje extends javax.swing.JInternalFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Codigo:");
 
@@ -192,17 +191,31 @@ public class VentanaViaje extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        var data = new String[6];
-        data[0] = this.jTextField1.getText();
-        data[1] = this.jComboBox1.getSelectedItem().toString();
-        data[2] = this.jComboBox2.getSelectedItem().toString();
-        data[3] = this.jTextField4.getText();
-        data[4] = this.jTextField5.getText();
-        data[5] = this.jTextField6.getText();
+        if (JOptionPane.showConfirmDialog(this, "Seguro de guardar datos?",
+                "Sistema de ciudades 1.0", JOptionPane.ERROR_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE) == 0) {
+            String[] data = new String[6];
+            data[0] = this.jTextField1.getText();
+            data[1] = this.jComboBox1.getSelectedItem().toString();
+            data[2] = this.jComboBox2.getSelectedItem().toString();
+            data[3] = this.jTextField4.getText();
+            data[4] = this.jTextField5.getText();
+            data[5] = this.jTextField6.getText();
 
-        this.viajeControl.crear(data);
-        this.actualizarTabla();
-        
+            try {
+
+                this.viajeControl.crear(data);
+                this.actualizarTabla();
+                this.actualizarCombos();
+                
+            } catch (Exception e1) {
+                JOptionPane.showMessageDialog(this, e1.getMessage(),
+                         "Error en la creación", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No se guardaron los datos", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -214,8 +227,8 @@ public class VentanaViaje extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    public void actualizarTabla(){
-        
+    public void actualizarTabla() {
+
         var data = new Object[this.viajeControl.listar().size()][4];
         for (var i = 0; i < this.viajeControl.listar().size(); i++) {
 
@@ -235,14 +248,10 @@ public class VentanaViaje extends javax.swing.JInternalFrame {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(data, encabezado));
 
     }
-    
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

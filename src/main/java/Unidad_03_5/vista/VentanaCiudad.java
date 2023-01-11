@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
  * @author sebas
  */
 public class VentanaCiudad extends javax.swing.JInternalFrame {
-    
-    private CiudadControl ciudadControl=new CiudadControl();
+
+    private CiudadControl ciudadControl = new CiudadControl();
 
     /**
      * Creates new form VentanaCiudad
@@ -24,8 +24,7 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
         this.setIconifiable(true);
         this.setResizable(true);
         this.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
-        
-        
+
         initComponents();
     }
 
@@ -44,7 +43,6 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
@@ -54,6 +52,7 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
 
         jToggleButton1.setText("jToggleButton1");
 
+        setBackground(new java.awt.Color(180, 255, 234));
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Código:");
@@ -68,13 +67,6 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Mostrar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -116,11 +108,6 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jButton1)
-                        .addGap(228, 228, 228)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,8 +129,11 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(73, 73, 73)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(jButton1)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,11 +154,9 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1))
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
@@ -181,67 +169,53 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        
-        
-        
-        /*var opcion=JOptionPane.showConfirmDialog(this, "Seguro de guardar datos?"
-                ,"Sistema de ciudades 1.0", JOptionPane.ERROR_MESSAGE);
-        JOptionPane.showMessageDialog(this,opcion);*/
-        if (JOptionPane.showConfirmDialog(this, "Seguro de guardar datos?"
-                ,"Sistema de ciudades 1.0", JOptionPane.ERROR_MESSAGE,JOptionPane.WARNING_MESSAGE)==0) {
-            String[] data=new String[4];
-        data[0]=this.jTextField1.getText();
-        data[1]=this.jTextField2.getText();
-        data[2]=this.jTextField3.getText();
-        data[3]=this.jTextField4.getText();
-        
-        
-        
-        this.ciudadControl.crear(data);
-        this.actualizarTabla();
-            
-        }
-        else{
-            
+
+        if (JOptionPane.showConfirmDialog(this, "Seguro de guardar datos?",
+                "Sistema de ciudades 1.0", JOptionPane.ERROR_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE) == 0) {
+            String[] data = new String[4];
+            data[0] = this.jTextField1.getText();
+            data[1] = this.jTextField2.getText();
+            data[2] = this.jTextField3.getText();
+            data[3] = this.jTextField4.getText();
+
+            try {
+                this.ciudadControl.crear(data);
+                this.actualizarTabla();
+            } catch (Exception e1) {
+                JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la creación", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+
             JOptionPane.showMessageDialog(this, "No se guardaron los datos", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-             this.actualizarTabla();
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    public void actualizarTabla() {
 
-    public void actualizarTabla(){
-        
-        var data = new Object [this.ciudadControl.listar().size()][4];
-             
-             for (var i=0; i<this.ciudadControl.listar().size();i++) {
-                 
-            data[i][0]=this.ciudadControl.listar().get(i).getCodigo();
-            data[i][1]=this.ciudadControl.listar().get(i).getNombre();
-            data[i][2]=this.ciudadControl.listar().get(i).getPais();
-            data[i][3]=this.ciudadControl.listar().get(i).getPoblacion();
+        var data = new Object[this.ciudadControl.listar().size()][4];
 
+        for (var i = 0; i < this.ciudadControl.listar().size(); i++) {
+
+            data[i][0] = this.ciudadControl.listar().get(i).getCodigo();
+            data[i][1] = this.ciudadControl.listar().get(i).getNombre();
+            data[i][2] = this.ciudadControl.listar().get(i).getPais();
+            data[i][3] = this.ciudadControl.listar().get(i).getPoblacion();
+this.ciudadControl.listar().get(i).getPoblacion();
         }
-        
-        
+
         var encabezado = new String[4];
-        encabezado[0]="Código";
-        encabezado[1]="Nombre";
-        encabezado[2]="Pais";
-        encabezado[3]="Población";
-        
-        
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(data,encabezado));
-        
+        encabezado[0] = "Código";
+        encabezado[1] = "Nombre";
+        encabezado[2] = "Pais";
+        encabezado[3] = "Población";
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(data, encabezado));
+
     }
-    
+
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
@@ -249,11 +223,9 @@ public class VentanaCiudad extends javax.swing.JInternalFrame {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

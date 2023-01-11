@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Unidad_02_1;
+package Unidad_02_1.modelo;
 
 import java.time.LocalDate;
 
@@ -11,21 +11,21 @@ import java.time.LocalDate;
  * @author sebas
  */
 public class Atencion {
-
     private LocalDate fecha;
     private String veterinario;
     private double costo;
     private Mascota mascota;
     private int cantidadRecetas;
-    private Receta []recetaList;
+    private Receta [] recetaList;
 
-    public Atencion(LocalDate fecha, String veterinario, double costo, Mascota mascota, int cantidadRecetas) {
+    public Atencion(LocalDate fecha, String veterinario, double costo, 
+            Mascota mascota, int cantidadRecetas) {
         this.fecha = fecha;
         this.veterinario = veterinario;
         this.costo = costo;
         this.mascota = mascota;
         this.cantidadRecetas = cantidadRecetas;
-        this.recetaList=new Receta[this.cantidadRecetas];
+        this.recetaList= new Receta[this.cantidadRecetas];
     }
     
     public void nuevaReceta(String medicamento, int cantidad, String indicacion, int posicion){
@@ -83,17 +83,13 @@ public class Atencion {
 
     @Override
     public String toString() {
-        var retorno= "Atencion{" + "fecha=" + fecha.toString() + ", veterinario=" + veterinario
-                + ", costo=" + costo + ", mascota=" + mascota + ", cantidadRecetas="
-                + cantidadRecetas + ", recetaList=" + recetaList[1].toString() + '}';
-        
-        for (var receta : this.recetaList) {
-            retorno+=receta.toString()+ "/n";
-            
+        var retorno= "Atencion{" + "fecha=" + fecha.toString() + ", veterinario=" 
+                + veterinario + ", costo=" + costo + ", mascota=" + mascota 
+                + ", cantidadRecetas=" + cantidadRecetas +"\n";
+    
+        for(var receta : this.recetaList){
+            retorno+=receta.toString()+"\n";
         }
-    return retorno;
+        return retorno;
     }
-    
-    
-
 }
